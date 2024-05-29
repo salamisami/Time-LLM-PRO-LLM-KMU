@@ -2,3 +2,12 @@ dataset/ETTh1.csv
 dataset/ETTh2.csv
 dataset/ETTm1.csv
 dataset/ETTm2.csv
+dataset/electricity
+dataset/ETT-small
+dataset/exchange_rate
+dataset/illness
+dataset/m4
+dataset/solar
+dataset/traffic
+dataset/weather
+dataset/PEMS/*
