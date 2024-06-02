@@ -11,3 +11,4 @@ dataset/solar
 dataset/traffic
 dataset/weather
 dataset/PEMS/*
+.history/
