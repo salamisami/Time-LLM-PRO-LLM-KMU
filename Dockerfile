@@ -5,10 +5,11 @@ FROM python:3.9-slim-buster
 WORKDIR /usr/src/app
 
 # Install system dependencies required for Psutil and other packages that need compilation
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     gcc \
     python3-dev \
     libc-dev \
+    dos2unix \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PyTorch first to ensure it's available for dependencies that require it
@@ -23,6 +24,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of your application's code
 COPY . .
+
+RUN find ./scripts -type f -print0 | xargs -0 dos2unix
 
 # Command to keep the container running for development
 CMD ["tail", "-f", "/dev/null"]
