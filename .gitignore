@@ -3,7 +3,9 @@ dataset/ETTh2.csv
 dataset/ETTm1.csv
 dataset/ETTm2.csv
 dataset/electricity
-dataset/ETT-small
+dataset/ETT-small/ETTh2.csv
+dataset/ETT-small/ETTm1.csv
+dataset/ETT-small/ETTm2.csv
 dataset/exchange_rate
 dataset/illness
 dataset/m4
@@ -12,3 +14,4 @@ dataset/traffic
 dataset/weather
 dataset/PEMS/*
 .history/
+!ETTh1.csv
