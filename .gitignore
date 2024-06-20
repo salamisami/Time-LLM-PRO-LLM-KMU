@@ -15,3 +15,4 @@ dataset/weather
 dataset/PEMS/*
 .history/
 !ETTh1.csv
+long_term_forecast_ETTh1_512_720_GPT2_ETTh1_ftM_sl512_ll48_pl720_dm32_nh8_el2_dl1_df128_fc3_ebtimeF_Exp_0-TimeLLM-ETTh1-GPT2/checkpoint

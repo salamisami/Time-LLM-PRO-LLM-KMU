@@ -133,7 +133,7 @@ for ii in range(args.itr):
         model = DLinear.Model(args).float()
     else:
         model = TimeLLM.Model(args).float()
-
+    # model.load_state_dict(torch.load('checkpoints/checkpoint', map_location=torch.device('cpu')))
     path = os.path.join(args.checkpoints,
                         setting + '-' + args.model_comment)  # unique checkpoint saving path
     args.content = load_content(args)
