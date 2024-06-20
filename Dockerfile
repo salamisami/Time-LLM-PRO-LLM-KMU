@@ -1,6 +1,7 @@
 # Use an official Python 3.9 runtime as a parent image
 FROM python:3.9-slim-buster
-
+#color support terminal
+ENV TERM xterm-256color
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
@@ -25,7 +26,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of your application's code
 COPY . .
 
-RUN find ./scripts -type f -print0 | xargs -0 dos2unix
+RUN find ./scripts -type f -print0 | xargs -0 dos2unix 
+RUN apt update 
+RUN apt install vim -y
 
 # Command to keep the container running for development
 CMD ["tail", "-f", "/dev/null"]
