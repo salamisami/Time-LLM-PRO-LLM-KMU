@@ -77,8 +77,8 @@ parser.add_argument('--output_attention', action='store_true', help='whether to 
 parser.add_argument('--patch_len', type=int, default=16, help='patch length')
 parser.add_argument('--stride', type=int, default=8, help='stride')
 parser.add_argument('--prompt_domain', type=int, default=0, help='')
-parser.add_argument('--llm_model', type=str, default='LLAMA', help='LLM model') # LLAMA, GPT2, BERT
-parser.add_argument('--llm_dim', type=int, default='4096', help='LLM model dimension')# LLama7b:4096; GPT2-small:768; BERT-base:768
+parser.add_argument('--llm_model', type=str, default='GPT2', help='LLM model') # LLAMA, GPT2, BERT
+parser.add_argument('--llm_dim', type=int, default='768', help='LLM model dimension')# LLama7b:4096; GPT2-small:768; BERT-base:768
 
 
 # optimization
@@ -133,7 +133,8 @@ for ii in range(args.itr):
         model = DLinear.Model(args).float()
     else:
         model = TimeLLM.Model(args).float()
-
+    #model.load_state_dict(torch.load('checkpoints/checkpoint', map_location=torch.device('cpu')))
+    #model.forward(model,1,1,1,1)
     path = os.path.join(args.checkpoints,
                         setting + '-' + args.model_comment)  # unique checkpoint saving path
     args.content = load_content(args)

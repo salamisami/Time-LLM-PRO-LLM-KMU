@@ -1,0 +1,1 @@
+Taxi is a collection of hourly amount of taxi rides in New York. The first column is the key in this dataset the date with hour, the second column is the amount of taxi rides as a whole positive number. 

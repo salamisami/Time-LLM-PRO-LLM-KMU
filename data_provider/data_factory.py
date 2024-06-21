@@ -10,6 +10,7 @@ data_dict = {
     'Traffic': Dataset_Custom,
     'Weather': Dataset_Custom,
     'm4': Dataset_M4,
+    'taxi': Dataset_Custom,
 }
 
 
@@ -43,6 +44,7 @@ def data_provider(args, flag):
             seasonal_patterns=args.seasonal_patterns
         )
     else:
+        print(args.root_path+args.data_path+flag+str(args.seq_len)+str(args.label_len)+str(args.pred_len)+args.features+args.target)
         data_set = Data(
             root_path=args.root_path,
             data_path=args.data_path,
